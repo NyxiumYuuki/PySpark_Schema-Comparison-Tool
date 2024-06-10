@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palantir Foundry - Schema Comparison Tool (Current and Previous)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PySpark - Schema Comparison Tool (Current and Previous)</h1>
+        <div id="infoPanel">
+            <strong>Info:</strong>
+            <p>We are not getting which nested field the fields are coming, but the schema difference should work.</p>
+        </div>
+        <div id="helpPanel">
+            <strong>Help:</strong>
+            <p>Ensure your text follows this format:</p>
+            <pre>
+StructType([...]) | Previous: StructType([...])
+            </pre>
+        </div>
+        <textarea id="schemaText" placeholder="Paste the text with both previous and current schema here..."></textarea>
+        <button onclick="compareSchemas()">Compare</button>
+        <div id="result" style="display: none;">
+            <div class="result-section">
+                <h2>Added Fields</h2>
+                <table id="addedTable"></table>
+            </div>
+            <div class="result-section">
+                <h2>Removed Fields</h2>
+                <table id="removedTable"></table>
+            </div>
+            <div class="result-section">
+                <h2>Modified Fields</h2>
+                <table id="modifiedTable"></table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
